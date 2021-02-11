@@ -31,7 +31,7 @@ const HomepageHeading = ({ mobile }) => (
           fontWeight: 'normal',
           marginBottom: mobile ? '1.5em' : '3em'
         }}>
-        a software developer with attitude
+        a husband &amp; software developer with attitude
       </Header.Subheader>
     </Header>
   </Container>
