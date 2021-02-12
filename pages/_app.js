@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types'
 import 'semantic-ui-css/semantic.min.css'
+import '../styles/custom.css'
 
 function MyApp({ Component, pageProps }) {
   return <Component {...pageProps} />

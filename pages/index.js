@@ -2,10 +2,14 @@ import React from 'react'
 import { Button, Container, Divider, Grid, Header, Image, List, Segment } from 'semantic-ui-react'
 import ResponsiveContainer from './layouts/responsive_container'
 import Intro from './intro'
+import Resume from './resume'
+
+import 'pure-react-carousel/dist/react-carousel.es.css'
 
 const HomepageLayout = () => (
   <ResponsiveContainer>
     <Intro />
+    <Resume />
 
     <Segment style={{ padding: '0em' }} vertical>
       <Grid celled="internally" columns="equal" stackable>
