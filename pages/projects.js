@@ -2,35 +2,36 @@ import React from 'react'
 import { CarouselProvider, Slider } from 'pure-react-carousel'
 import { Segment, Header } from 'semantic-ui-react'
 
-import resumeData from '../components/resume/resume-data'
-import ResumeSlide from '../components/resume/resume-slide'
-import Timeline from '../components/resume/timeline'
+import projectData from '../components/projects/project-data'
+import ProjectSlide from '../components/projects/project-slide'
+import Timeline from '../components/projects/timeline'
 
-const Resume = () => {
+const Projects = () => {
   return (
     <Segment style={{ padding: '8em 0em' }} vertical>
       <CarouselProvider
         naturalSlideWidth={1}
         naturalSlideHeight={0.3}
-        totalSlides={6}
+        totalSlides={2}
         style={{ width: '90%', margin: '0 auto' }}
         isIntrinsicHeight>
         <Header as="h3" style={{ fontSize: '2em' }}>
-          Resume
+          Projects
         </Header>
         <Timeline
-          slides={6}
+          slides={2}
           size="compact"
-          durations={resumeData.map((item) => item.data.shortDuration)}
+          durations={projectData.map((item) => item.data.shortDuration)}
         />
         <Slider>
-          {resumeData.map((item, index) => (
-            <ResumeSlide
+          {projectData.map((item, index) => (
+            <ProjectSlide
               key={index}
               index={index}
               data={item.data}
               description={item.description}
               techIcons={item.techIcons}
+              images={item.images}
             />
           ))}
         </Slider>
@@ -39,4 +40,4 @@ const Resume = () => {
   )
 }
 
-export default Resume
+export default Projects

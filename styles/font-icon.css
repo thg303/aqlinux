@@ -1,0 +1,169 @@
+@font-face {
+  font-family: 'icomoon';
+  src:  url('fonts/icomoon.eot?kt9oar');
+  src:  url('fonts/icomoon.eot?kt9oar#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?kt9oar') format('truetype'),
+    url('fonts/icomoon.woff?kt9oar') format('woff'),
+    url('fonts/icomoon.svg?kt9oar#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-angular:before {
+  content: "\e900";
+  color: #dd0031;
+}
+.icon-apache:before {
+  content: "\e91f";
+  color: #d22128;
+}
+.icon-css3:before {
+  content: "\e901";
+  color: #1572b6;
+}
+.icon-csswizardry:before {
+  content: "\e902";
+  color: #f43059;
+}
+.icon-git:before {
+  content: "\e903";
+  color: #f05032;
+}
+.icon-github:before {
+  content: "\e904";
+}
+.icon-gitlab:before {
+  content: "\e905";
+  color: #fca121;
+}
+.icon-gnu:before {
+  content: "\e924";
+  color: #a42e2b;
+}
+.icon-html5:before {
+  content: "\e906";
+  color: #e34f26;
+}
+.icon-java:before {
+  content: "\e907";
+  color: #007396;
+}
+.icon-javascript:before {
+  content: "\e908";
+  color: #f7df1e;
+}
+.icon-jetbrains:before {
+  content: "\e909";
+}
+.icon-jquery:before {
+  content: "\e90a";
+  color: #0769ad;
+}
+.icon-laravel:before {
+  content: "\e90b";
+  color: #ff2d20;
+}
+.icon-linkedin:before {
+  content: "\e90c";
+  color: #0077b5;
+}
+.icon-linux:before {
+  content: "\e90d";
+  color: #fcc624;
+}
+.icon-mysql:before {
+  content: "\e920";
+  color: #4479a1;
+}
+.icon-node-dot-js:before {
+  content: "\e90e";
+  color: #393;
+}
+.icon-opensourceinitiative:before {
+  content: "\e921";
+  color: #3da639;
+}
+.icon-paypal:before {
+  content: "\e90f";
+  color: #00457c;
+}
+.icon-php:before {
+  content: "\e910";
+  color: #777bb4;
+}
+.icon-postgresql:before {
+  content: "\e911";
+  color: #336791;
+}
+.icon-postman:before {
+  content: "\e912";
+  color: #ff6c37;
+}
+.icon-python:before {
+  content: "\e913";
+  color: #3776ab;
+}
+.icon-rails:before {
+  content: "\e914";
+  color: #c00;
+}
+.icon-react:before {
+  content: "\e915";
+  color: #61dafb;
+}
+.icon-redis:before {
+  content: "\e916";
+  color: #d82c20;
+}
+.icon-ruby:before {
+  content: "\e917";
+  color: #cc342d;
+}
+.icon-skype:before {
+  content: "\e918";
+  color: #00aff0;
+}
+.icon-spotify:before {
+  content: "\e919";
+  color: #1ed760;
+}
+.icon-stackoverflow:before {
+  content: "\e91a";
+  color: #fe7a16;
+}
+.icon-tor:before {
+  content: "\e922";
+  color: #7e4798;
+}
+.icon-trello:before {
+  content: "\e91b";
+  color: #0079bf;
+}
+.icon-twitter:before {
+  content: "\e91c";
+  color: #1da1f2;
+}
+.icon-ubuntu:before {
+  content: "\e91d";
+  color: #e95420;
+}
+.icon-whatsapp:before {
+  content: "\e91e";
+  color: #25d366;
+}
