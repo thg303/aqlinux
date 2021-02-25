@@ -20,7 +20,7 @@ const Projects = () => {
         </Header>
         <Timeline
           slides={2}
-          size="compact"
+          size="small"
           durations={projectData.map((item) => item.data.shortDuration)}
         />
         <Slider>

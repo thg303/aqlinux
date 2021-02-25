@@ -1,42 +1,36 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import { CarouselProvider, Slider } from 'pure-react-carousel'
 import { Segment, Header } from 'semantic-ui-react'
 
-import projectData from '../components/projects/project-data'
-import ProjectSlide from '../components/projects/project-slide'
-import Timeline from '../components/projects/timeline'
+import PhotoWindow from '../components/photo-gallery/photo-window'
+import Navigator from '../components/photo-gallery/navigator'
 
-const PhotoGallery = () => {
+const PhotoGallery = ({ photos }) => {
   return (
     <Segment style={{ padding: '8em 0em' }} vertical>
       <CarouselProvider
         naturalSlideWidth={1}
         naturalSlideHeight={0.3}
-        totalSlides={6}
+        totalSlides={photos.length}
         style={{ width: '90%', margin: '0 auto' }}
         isIntrinsicHeight>
         <Header as="h3" style={{ fontSize: '2em' }}>
           PhotoGallery
         </Header>
-        <Timeline
-          slides={6}
-          size="compact"
-          durations={projectData.map((item) => item.data.shortDuration)}
-        />
+        <Navigator slides={photos.length} size="small" />
         <Slider>
-          {projectData.map((item, index) => (
-            <ProjectSlide
-              key={index}
-              index={index}
-              data={item.data}
-              description={item.description}
-              techIcons={item.techIcons}
-            />
+          {photos.map((item, index) => (
+            <PhotoWindow key={index} index={index} photos={item} />
           ))}
         </Slider>
       </CarouselProvider>
     </Segment>
   )
+}
+
+PhotoGallery.propTypes = {
+  photos: PropTypes.array
 }
 
 export default PhotoGallery

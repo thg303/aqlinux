@@ -35,15 +35,19 @@ const projectData = [
       }
     ],
     description: (
-      <p style={{ lineHeight: '1.425em', fontSize: '1.142em' }}>
-        This was a personal project. I implemented a web interface to manage Linux firewall using
-        iptables. The idea was challenging because:
+      <div className="description">
+        <p>
+          This was a personal project. I implemented a web interface to manage Linux firewall using
+          iptables. The idea was challenging because:
+        </p>
         <ul>
           <li>The user should be able to update the firewall instantly.</li>
           <li>The user should not be able to access or change other parts of the server.</li>
         </ul>
-        After trying a couple of IPC (Inter-Process Communication) methods I come up with a working
-        paradigm. I split the application into 2 parts:
+        <p>
+          After trying a couple of IPC (Inter-Process Communication) methods I come up with a
+          working paradigm. I split the application into 2 parts:
+        </p>
         <ul>
           <li>
             Web Interface - It works with Apache and CGI. It uses a simple UI to take user rules and
@@ -57,7 +61,7 @@ const projectData = [
             proper iptables command, and executes it.
           </li>
         </ul>
-      </p>
+      </div>
     )
   },
   {
@@ -91,15 +95,20 @@ const projectData = [
       }
     ],
     description: (
-      <p style={{ lineHeight: '1.425em', fontSize: '1.142em' }}>
-        Tehran Miveh is my first professional programming experience. It is a simple e-commerce
-        application that takes fruit orders from customers and delivers the order at the door. It
-        was needed to be written in java (j2me) to maximize device support.
-        <br />I decided to build the application using the LWUIT framework because it reduced a lot
-        of complexity and provides a nice and easy theme editor for the UI. Back in those days, the
-        internet was not as widely available as now, so the customer decided to use SMS technology.
-        I created a custom protocol to communicate with the server using S.M.S technology.
-      </p>
+      <div className="description">
+        <p>
+          Tehran Miveh is my first professional programming experience. It is a simple e-commerce
+          application that takes fruit orders from customers and delivers the order at the door. It
+          was needed to be written in java (j2me) to maximize device support.
+        </p>
+        <p>
+          I decided to build the application using the LWUIT framework because it reduced a lot of
+          complexity and provides a nice and easy theme editor for the UI. Back in those days, the
+          internet was not as widely available as now, so the customer decided to use SMS
+          technology. I created a custom protocol to communicate with the server using S.M.S
+          technology.
+        </p>
+      </div>
     )
   }
 ]

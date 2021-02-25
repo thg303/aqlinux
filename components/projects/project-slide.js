@@ -56,8 +56,8 @@ ProjectSlide.propTypes = {
     title: PropTypes.string.isRequired,
     creationDate: PropTypes.string.isRequired,
     tags: PropTypes.array,
-    link: PropTypes.string.isRequired,
-    linkCaption: PropTypes.string.isRequired,
+    link: PropTypes.string,
+    linkCaption: PropTypes.string,
     shortDuration: PropTypes.string
   }),
   description: PropTypes.node.isRequired,
