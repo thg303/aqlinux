@@ -1,12 +1,13 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import { CarouselProvider, Slider } from 'pure-react-carousel'
 import { Segment, Header } from 'semantic-ui-react'
+import dayjs from 'dayjs'
 
-import projectData from '../components/projects/project-data'
 import ProjectSlide from '../components/projects/project-slide'
 import Timeline from '../components/projects/timeline'
 
-const Projects = () => {
+const Projects = ({ list }) => {
   return (
     <Segment style={{ padding: '8em 0em' }} vertical>
       <CarouselProvider
@@ -21,23 +22,20 @@ const Projects = () => {
         <Timeline
           slides={2}
           size="small"
-          durations={projectData.map((item) => item.data.shortDuration)}
+          durations={list.map((item) => dayjs(item.creation_date).format('MMM YYYY'))}
         />
         <Slider>
-          {projectData.map((item, index) => (
-            <ProjectSlide
-              key={index}
-              index={index}
-              data={item.data}
-              description={item.description}
-              techIcons={item.techIcons}
-              images={item.images}
-            />
+          {list.map((item, index) => (
+            <ProjectSlide key={index} index={index} data={item} />
           ))}
         </Slider>
       </CarouselProvider>
     </Segment>
   )
+}
+
+Projects.propTypes = {
+  list: PropTypes.array
 }
 
 export default Projects

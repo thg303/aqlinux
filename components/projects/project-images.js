@@ -11,8 +11,8 @@ const ProjectImages = ({ images }) => {
       {images.map((item, iIndex) => (
         <span key={`${iIndex}i`}>
           <Image
-            src={item.src}
-            alt={item.alt}
+            src={process.env.NEXT_PUBLIC_CMS_HOST + item.formats.small.url}
+            alt={item.alternativeText}
             bordered
             rounded
             onClick={() => {
@@ -29,7 +29,11 @@ const ProjectImages = ({ images }) => {
               open={true}
               onClose={() => setIsOpen(false)}>
               <Modal.Content image>
-                <Image centered src={images[activeImage].src} alt={images[activeImage].alt} />
+                <Image
+                  centered
+                  src={process.env.NEXT_PUBLIC_CMS_HOST + images[activeImage].url}
+                  alt={images[activeImage].alternativeText}
+                />
               </Modal.Content>
             </Modal>
           </TransitionablePortal>

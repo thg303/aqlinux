@@ -6,15 +6,17 @@ import Intro from './intro'
 import Resume from './resume'
 import Projects from './projects'
 import PhotoGallery from './photo-gallery'
+import loadPhotoGallery from './api/load-photo-gallery'
+import loadProjects from './api/load-projects'
 
 import 'pure-react-carousel/dist/react-carousel.es.css'
 
-const HomepageLayout = ({ photos }) => {
+const HomepageLayout = ({ photos, projects }) => {
   return (
     <ResponsiveContainer>
       <Intro />
       <Resume />
-      <Projects />
+      <Projects list={projects} />
       <PhotoGallery photos={photos} />
 
       <Segment style={{ padding: '0em' }} vertical>
@@ -115,22 +117,19 @@ const HomepageLayout = ({ photos }) => {
 }
 
 HomepageLayout.propTypes = {
-  photos: PropTypes.array
+  photos: PropTypes.array,
+  projects: PropTypes.array
 }
 
 export async function getStaticProps() {
-  const url = process.env.NEXT_PUBLIC_CMS_HOST + '/photos'
-  const res = await fetch(url)
-  const allPhotos = await res.json()
-  let i = 0
-  let separatedPhotos = []
-  while (i < allPhotos.length) {
-    const sliced = allPhotos.slice(i, i + 6)
-    separatedPhotos.push(sliced)
-    i = i + sliced.length
-  }
+  const photoGallery = await loadPhotoGallery()
+  const projects = await loadProjects()
+
   return {
-    props: { photos: separatedPhotos }
+    props: {
+      photos: photoGallery,
+      projects: projects
+    }
   }
 }
 
