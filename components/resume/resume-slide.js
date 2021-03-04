@@ -2,23 +2,25 @@ import PropTypes from 'prop-types'
 import { Slide } from 'pure-react-carousel'
 import React from 'react'
 import { Icon, Item } from 'semantic-ui-react'
+import ReactMarkdown from 'react-markdown'
 
-const ResumeSlide = ({ index, data, description, techIcons }) => (
+const ResumeSlide = ({ index, data }) => (
   <Slide index={index}>
     <Item.Group divided>
       <Item>
         <Item.Image
-          src={data.image}
+          src={process.env.NEXT_PUBLIC_CMS_HOST + data.image.formats.medium.url}
           className="shadowPicture"
           size="medium"
           as="a"
-          href={data.imageLink}
+          href={process.env.NEXT_PUBLIC_CMS_HOST + data.image.url}
           target="_blank"
+          alt={data.image.alternativeText}
           rel="noopener noreferrer"
         />
         <Item.Content>
           <Item.Header>
-            <a href={data.href} target="_blank" rel="noopener noreferrer">
+            <a href={data.link} target="_blank" rel="noopener noreferrer">
               {data.firm}
             </a>
           </Item.Header>
@@ -27,17 +29,19 @@ const ResumeSlide = ({ index, data, description, techIcons }) => (
             <br />
             <span style={{ fontStyle: 'italic' }}>{data.duration}</span>
           </Item.Meta>
-          <Item.Description>{description}</Item.Description>
+          <Item.Description>
+            <ReactMarkdown>{data.description}</ReactMarkdown>
+          </Item.Description>
           <Item.Extra>
-            {techIcons.map((item, tIndex) => (
+            {data.icons.map((icon) => (
               <a
-                key={tIndex}
+                key={icon.id}
                 style={{ marginRight: '0.5em' }}
-                href={item.href}
+                href={icon.link}
                 target="_blank"
                 rel="noopener noreferrer">
-                <Icon index={tIndex} name={item.iconName} />
-                {item.title}
+                <Icon index={icon.id} name={icon.icon_name} />
+                {icon.title}
               </a>
             ))}
           </Item.Extra>
@@ -49,22 +53,7 @@ const ResumeSlide = ({ index, data, description, techIcons }) => (
 
 ResumeSlide.propTypes = {
   index: PropTypes.number.isRequired,
-  data: PropTypes.shape({
-    image: PropTypes.string.isRequired,
-    imageLink: PropTypes.string.isRequired,
-    href: PropTypes.string.isRequired,
-    firm: PropTypes.string.isRequired,
-    job: PropTypes.string.isRequired,
-    duration: PropTypes.string.isRequired
-  }),
-  description: PropTypes.node.isRequired,
-  techIcons: PropTypes.arrayOf(
-    PropTypes.shape({
-      href: PropTypes.string.isRequired,
-      iconName: PropTypes.string.isRequired,
-      title: PropTypes.string.isRequired
-    })
-  )
+  data: PropTypes.array
 }
 
 export default ResumeSlide

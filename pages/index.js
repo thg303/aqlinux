@@ -8,14 +8,15 @@ import Projects from './projects'
 import PhotoGallery from './photo-gallery'
 import loadPhotoGallery from './api/load-photo-gallery'
 import loadProjects from './api/load-projects'
+import loadResumes from './api/load-resumes'
 
 import 'pure-react-carousel/dist/react-carousel.es.css'
 
-const HomepageLayout = ({ photos, projects }) => {
+const HomepageLayout = ({ photos, projects, resumes }) => {
   return (
     <ResponsiveContainer>
       <Intro />
-      <Resume />
+      <Resume list={resumes} />
       <Projects list={projects} />
       <PhotoGallery photos={photos} />
 
@@ -118,17 +119,20 @@ const HomepageLayout = ({ photos, projects }) => {
 
 HomepageLayout.propTypes = {
   photos: PropTypes.array,
-  projects: PropTypes.array
+  projects: PropTypes.array,
+  resumes: PropTypes.array
 }
 
 export async function getStaticProps() {
   const photoGallery = await loadPhotoGallery()
   const projects = await loadProjects()
+  const resumes = await loadResumes()
 
   return {
     props: {
       photos: photoGallery,
-      projects: projects
+      projects: projects,
+      resumes: resumes
     }
   }
 }
