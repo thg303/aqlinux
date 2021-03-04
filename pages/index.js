@@ -6,6 +6,7 @@ import Intro from './intro'
 import Resume from './resume'
 import Projects from './projects'
 import PhotoGallery from './photo-gallery'
+import Contact from './contact'
 import loadPhotoGallery from './api/load-photo-gallery'
 import loadProjects from './api/load-projects'
 import loadResumes from './api/load-resumes'
@@ -19,6 +20,7 @@ const HomepageLayout = ({ photos, projects, resumes }) => {
       <Resume list={resumes} />
       <Projects list={projects} />
       <PhotoGallery photos={photos} />
+      <Contact />
 
       <Segment style={{ padding: '0em' }} vertical>
         <Grid celled="internally" columns="equal" stackable>

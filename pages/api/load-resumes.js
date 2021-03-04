@@ -12,4 +12,3 @@ export default async function loadResumes() {
     return { ...item, duration: duration, shortDuration: shortDuration }
   })
 }
-//May 2019 - Present

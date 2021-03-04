@@ -7,7 +7,6 @@ import ResumeSlide from '../components/resume/resume-slide'
 import Timeline from '../components/resume/timeline'
 
 const Resume = ({ list }) => {
-  console.log('list', list)
   return (
     <Segment style={{ padding: '8em 0em' }} vertical>
       <CarouselProvider
@@ -21,7 +20,7 @@ const Resume = ({ list }) => {
         </Header>
         <Timeline
           slides={list.length}
-          size="compact"
+          size="small"
           durations={list.map((item) => item.shortDuration)}
         />
         <Slider>

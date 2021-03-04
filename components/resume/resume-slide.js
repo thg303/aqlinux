@@ -53,7 +53,7 @@ const ResumeSlide = ({ index, data }) => (
 
 ResumeSlide.propTypes = {
   index: PropTypes.number.isRequired,
-  data: PropTypes.array
+  data: PropTypes.object
 }
 
 export default ResumeSlide
