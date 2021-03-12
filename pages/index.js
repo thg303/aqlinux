@@ -1,6 +1,5 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Button, Container, Divider, Grid, Header, Image, List, Segment } from 'semantic-ui-react'
 import ResponsiveContainer from './layouts/responsive_container'
 import Intro from './intro'
 import Resume from './resume'

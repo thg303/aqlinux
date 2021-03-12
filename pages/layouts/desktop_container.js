@@ -33,11 +33,21 @@ const DesktopContainer = (props) => {
               <Menu.Item as="a" href="#desktop" active>
                 Home
               </Menu.Item>
-              <Menu.Item as="a" href="#intro">Intro</Menu.Item>
-              <Menu.Item as="a" href="#resume">Resume</Menu.Item>
-              <Menu.Item as="a" href="#projects">Projects</Menu.Item>
-              <Menu.Item as="a" href="#gallery">Gallery</Menu.Item>
-              <Menu.Item as="a" href="#contact">Contact</Menu.Item>
+              <Menu.Item as="a" href="#intro">
+                Intro
+              </Menu.Item>
+              <Menu.Item as="a" href="#resume">
+                Resume
+              </Menu.Item>
+              <Menu.Item as="a" href="#projects">
+                Projects
+              </Menu.Item>
+              <Menu.Item as="a" href="#gallery">
+                Gallery
+              </Menu.Item>
+              <Menu.Item as="a" href="#contact">
+                Contact
+              </Menu.Item>
             </Container>
           </Menu>
           <HomepageHeading />
