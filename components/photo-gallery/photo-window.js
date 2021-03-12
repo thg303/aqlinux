@@ -11,18 +11,17 @@ const PhotoWindow = ({ index, photos }) => {
     <Slide index={index}>
       <Image.Group size="small" style={{ display: 'flex', justifyContent: 'center' }}>
         {photos.map((item, index) => (
-          <span key={item.id}>
-            <Image
+            [<Image
               bordered
               rounded
               key={item.id}
               alt={item.photo.alternativeText}
-              src={`${process.env.NEXT_PUBLIC_CMS_HOST}${item.photo.formats.small.url}`}
+              src={`${process.env.NEXT_PUBLIC_CMS_HOST}${item.photo.formats.thumbnail.url}`}
               onClick={() => {
                 setActiveImage(index)
                 setIsOpen(true)
               }}
-            />
+            />,
             <TransitionablePortal open={isOpen} transition={{ animation: 'scale', duration: 300 }}>
               <Modal
                 basic
@@ -39,8 +38,7 @@ const PhotoWindow = ({ index, photos }) => {
                   />
                 </Modal.Content>
               </Modal>
-            </TransitionablePortal>
-          </span>
+            </TransitionablePortal>]
         ))}
       </Image.Group>
     </Slide>
