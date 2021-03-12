@@ -2,7 +2,7 @@ import React from 'react'
 import { Button, Grid, Header, Segment } from 'semantic-ui-react'
 
 const Intro = () => (
-  <Segment style={{ padding: '8em 0em' }} vertical>
+  <Segment id="intro" style={{ padding: '8em 0em' }} vertical>
     <Grid container stackable verticalAlign="middle">
       <Grid.Row>
         <Grid.Column width={8}>

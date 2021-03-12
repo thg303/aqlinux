@@ -8,7 +8,7 @@ import Navigator from '../components/photo-gallery/navigator'
 
 const PhotoGallery = ({ photos }) => {
   return (
-    <Segment style={{ padding: '8em 0em' }} vertical>
+    <Segment id="gallery" style={{ padding: '8em 0em' }} vertical>
       <CarouselProvider
         naturalSlideWidth={1}
         naturalSlideHeight={0.3}

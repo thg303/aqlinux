@@ -21,7 +21,7 @@ const Contact = () => {
   }
 
   return (
-    <Segment style={{ padding: '0em' }} vertical>
+    <Segment style={{ padding: '0em' }} vertical id="contact">
       <Grid celled="internally" columns="equal" stackable>
         <Grid.Row textAlign="center">
           <Grid.Column style={{ paddingBottom: '5em', paddingTop: '5em' }}>

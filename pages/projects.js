@@ -9,7 +9,7 @@ import Timeline from '../components/projects/timeline'
 
 const Projects = ({ list }) => {
   return (
-    <Segment style={{ padding: '8em 0em' }} vertical>
+    <Segment id="projects" style={{ padding: '8em 0em' }} vertical>
       <CarouselProvider
         naturalSlideWidth={1}
         naturalSlideHeight={0.3}

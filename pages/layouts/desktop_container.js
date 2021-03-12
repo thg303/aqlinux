@@ -1,7 +1,7 @@
 import { Media } from './media'
 import PropTypes from 'prop-types'
 import React, { useState } from 'react'
-import { Button, Container, Menu, Segment, Visibility } from 'semantic-ui-react'
+import { Container, Menu, Segment, Visibility } from 'semantic-ui-react'
 import HomepageHeading from './homepage_heading'
 
 /* Heads up!
@@ -18,6 +18,7 @@ const DesktopContainer = (props) => {
         onBottomPassed={() => showFixedMenu(true)}
         onBottomPassedReverse={() => showFixedMenu(false)}>
         <Segment
+          id="desktop"
           inverted
           textAlign="center"
           style={{ minHeight: 700, padding: '1em 0em' }}
@@ -29,17 +30,14 @@ const DesktopContainer = (props) => {
             secondary={!fixed}
             size="large">
             <Container>
-              <Menu.Item as="a" active>
+              <Menu.Item as="a" href="#desktop" active>
                 Home
               </Menu.Item>
-              <Menu.Item as="a">Work</Menu.Item>
-              <Menu.Item as="a">Company</Menu.Item>
-              <Menu.Item as="a">Careers</Menu.Item>
-              <Menu.Item position="right">
-                <Button as="a" inverted={!fixed}>
-                  Log in
-                </Button>
-              </Menu.Item>
+              <Menu.Item as="a" href="#intro">Intro</Menu.Item>
+              <Menu.Item as="a" href="#resume">Resume</Menu.Item>
+              <Menu.Item as="a" href="#projects">Projects</Menu.Item>
+              <Menu.Item as="a" href="#gallery">Gallery</Menu.Item>
+              <Menu.Item as="a" href="#contact">Contact</Menu.Item>
             </Container>
           </Menu>
           <HomepageHeading />

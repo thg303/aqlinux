@@ -8,7 +8,7 @@ import Timeline from '../components/resume/timeline'
 
 const Resume = ({ list }) => {
   return (
-    <Segment style={{ padding: '8em 0em' }} vertical>
+    <Segment id="resume" style={{ padding: '8em 0em' }} vertical>
       <CarouselProvider
         naturalSlideWidth={1}
         naturalSlideHeight={0.3}
