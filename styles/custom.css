@@ -11,3 +11,7 @@ html {
  line-height: 1.425em;
  font-size: 1.142em;
 }
+
+.ui.embed>.icon:before {
+  color: #ff0000;
+}

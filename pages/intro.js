@@ -1,5 +1,5 @@
 import React from 'react'
-import { Button, Grid, Header, Segment } from 'semantic-ui-react'
+import { Button, Grid, Header, Segment, Embed } from 'semantic-ui-react'
 
 const Intro = () => (
   <Segment id="intro" style={{ padding: '8em 0em' }} vertical>
@@ -9,7 +9,9 @@ const Intro = () => (
           <Header as="h3" style={{ fontSize: '2em' }}>
             Ali who?
           </Header>
-          <p style={{ fontSize: '1.33em' }}>My last name is difficult, you can call me Ali.</p>
+          <p style={{ fontSize: '1.33em' }}>
+            My last name is Ghanavatian. Yes, it&apos;s difficult... you can call me Ali.
+          </p>
           <Header as="h3" style={{ fontSize: '2em' }}>
             What&apos;s in the video?
           </Header>
@@ -23,14 +25,7 @@ const Intro = () => (
           </p>
         </Grid.Column>
         <Grid.Column floated="right" width={6}>
-          <iframe
-            width="100%"
-            height="100%"
-            src="https://www.youtube.com/embed/0_A9cax-A88"
-            frameBorder="0"
-            title="my introduction video"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen></iframe>
+          <Embed id="3txvxtTO-Hg" placeholder="/video-cover.png" source="youtube" />
         </Grid.Column>
       </Grid.Row>
       <Grid.Row>
