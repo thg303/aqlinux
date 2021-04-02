@@ -3,8 +3,8 @@ import PropTypes from 'prop-types'
 import { CarouselProvider, Slider } from 'pure-react-carousel'
 import { Segment, Header } from 'semantic-ui-react'
 
-import PhotoWindow from '../components/photo-gallery/photo-window'
-import Navigator from '../components/photo-gallery/navigator'
+import PhotoWindow from './photo-window'
+import Navigator from './navigator'
 
 const PhotoGallery = ({ photos }) => {
   return (

@@ -2,30 +2,31 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { CarouselProvider, Slider } from 'pure-react-carousel'
 import { Segment, Header } from 'semantic-ui-react'
+import dayjs from 'dayjs'
 
-import ResumeSlide from '../components/resume/resume-slide'
-import Timeline from '../components/resume/timeline'
+import ProjectSlide from './project-slide'
+import Timeline from './timeline'
 
-const Resume = ({ list }) => {
+const Projects = ({ list }) => {
   return (
-    <Segment id="resume" style={{ padding: '8em 0em' }} vertical>
+    <Segment id="projects" style={{ padding: '8em 0em' }} vertical>
       <CarouselProvider
         naturalSlideWidth={1}
         naturalSlideHeight={0.3}
-        totalSlides={list.length}
+        totalSlides={2}
         style={{ width: '90%', margin: '0 auto' }}
         isIntrinsicHeight>
         <Header as="h3" style={{ fontSize: '2em' }}>
-          Resume
+          Projects
         </Header>
         <Timeline
-          slides={list.length}
+          slides={2}
           size="small"
-          durations={list.map((item) => item.shortDuration)}
+          durations={list.map((item) => dayjs(item.creation_date).format('MMM YYYY'))}
         />
         <Slider>
-          {list.map((item) => (
-            <ResumeSlide key={item.id} index={item.id} data={item} />
+          {list.map((item, index) => (
+            <ProjectSlide key={index} index={index} data={item} />
           ))}
         </Slider>
       </CarouselProvider>
@@ -33,8 +34,8 @@ const Resume = ({ list }) => {
   )
 }
 
-Resume.propTypes = {
+Projects.propTypes = {
   list: PropTypes.array
 }
 
-export default Resume
+export default Projects

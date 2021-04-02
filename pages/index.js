@@ -1,11 +1,11 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import ResponsiveContainer from './layouts/responsive_container'
-import Intro from './intro'
-import Resume from './resume'
-import Projects from './projects'
-import PhotoGallery from './photo-gallery'
-import Contact from './contact'
+import Intro from '@/components/intro'
+import Resume from '@/components/resume/resume'
+import Projects from '@/components/projects/projects'
+import PhotoGallery from '@/components/photo-gallery/photo-gallery'
+import Contact from '@/components/contact'
 import loadPhotoGallery from './api/load-photo-gallery'
 import loadProjects from './api/load-projects'
 import loadResumes from './api/load-resumes'
@@ -16,9 +16,9 @@ const HomepageLayout = ({ photos, projects, resumes }) => {
   return (
     <ResponsiveContainer>
       <Intro />
-      <Resume list={resumes} />
-      <Projects list={projects} />
-      <PhotoGallery photos={photos} />
+      {resumes && <Resume list={resumes} />}
+      {projects && <Projects list={projects} />}
+      {photos && <PhotoGallery photos={photos} />}
       <Contact />
     </ResponsiveContainer>
   )
@@ -31,9 +31,9 @@ HomepageLayout.propTypes = {
 }
 
 export async function getStaticProps() {
-  const photoGallery = await loadPhotoGallery()
-  const projects = await loadProjects()
-  const resumes = await loadResumes()
+  const photoGallery = await loadPhotoGallery() || []
+  const projects = await loadProjects() || []
+  const resumes = await loadResumes() || []
 
   return {
     props: {

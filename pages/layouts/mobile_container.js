@@ -2,7 +2,7 @@ import PropTypes from 'prop-types'
 import React, { useState } from 'react'
 import { Container, Icon, Menu, Segment, Sidebar } from 'semantic-ui-react'
 import HomepageHeading from './homepage_heading'
-import { Media } from './media'
+import { Media } from '@/utils/media'
 
 const MobileContainer = (props) => {
   const [sidebarOpened, openSidebar] = useState(false)

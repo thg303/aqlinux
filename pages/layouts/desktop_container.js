@@ -1,4 +1,4 @@
-import { Media } from './media'
+import { Media } from '@/utils/media'
 import PropTypes from 'prop-types'
 import React, { useState } from 'react'
 import { Container, Menu, Segment, Visibility } from 'semantic-ui-react'

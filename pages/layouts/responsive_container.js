@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types'
 import React from 'react'
-import { MediaContextProvider } from './media'
+import { MediaContextProvider } from '@/utils/media'
 import DesktopContainer from './desktop_container'
 import MobileContainer from './mobile_container'
 

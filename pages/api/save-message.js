@@ -1,3 +1,5 @@
+import fetchErrorHandler from '@/utils/fetch-error-handler'
+
 export default async function saveMessage(message) {
   const url = process.env.NEXT_PUBLIC_CMS_HOST + '/messages'
   const options = {
@@ -9,5 +11,6 @@ export default async function saveMessage(message) {
     method: 'POST'
   }
   const res = await fetch(url, options)
+  fetchErrorHandler(res)
   return await res.json()
 }

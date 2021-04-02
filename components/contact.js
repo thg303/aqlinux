@@ -1,7 +1,7 @@
 import React from 'react'
 import { Segment, Header, Grid, Form, TextArea, List } from 'semantic-ui-react'
 import ReCAPTCHA from 'react-google-recaptcha'
-import saveMessage from './api/save-message'
+import saveMessage from '../pages/api/save-message'
 
 const Contact = () => {
   const [name, setName] = React.useState('')
