@@ -31,9 +31,9 @@ HomepageLayout.propTypes = {
 }
 
 export async function getStaticProps() {
-  const photoGallery = await loadPhotoGallery() || []
-  const projects = await loadProjects() || []
-  const resumes = await loadResumes() || []
+  const photoGallery = (await loadPhotoGallery()) || []
+  const projects = (await loadProjects()) || []
+  const resumes = (await loadResumes()) || []
 
   return {
     props: {

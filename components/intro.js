@@ -30,7 +30,15 @@ const Intro = () => (
       </Grid.Row>
       <Grid.Row>
         <Grid.Column textAlign="center">
-          <Button size="huge" onClick={() => window.open(`${process.env.NEXT_PUBLIC_CMS_HOST}/uploads/Ali_Ghanavatian_resume_92d9db95cc.pdf`)}>Download Resume</Button>
+          <Button
+            size="huge"
+            onClick={() =>
+              window.open(
+                `${process.env.NEXT_PUBLIC_CMS_HOST}/uploads/Ali_Ghanavatian_resume_92d9db95cc.pdf`
+              )
+            }>
+            Download Resume
+          </Button>
           <p style={{ marginTop: '0.5em', fontSize: '1.5em' }}>it&apos;s a nearly 50Kb PDF file</p>
         </Grid.Column>
       </Grid.Row>
