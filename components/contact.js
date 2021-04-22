@@ -1,6 +1,6 @@
 import React from 'react'
 import { Segment, Header, Grid, Form, TextArea, List } from 'semantic-ui-react'
-import ReCAPTCHA from 'react-google-recaptcha'
+import { GoogleReCaptchaProvider, GoogleReCaptcha } from 'react-google-recaptcha-v3'
 import saveMessage from '../pages/api/save-message'
 
 const Contact = () => {
@@ -83,12 +83,9 @@ const Contact = () => {
                     onChange={(e, { value }) => setMessage(value)}
                   />
                 </Form.Field>
-                <ReCAPTCHA
-                  sitekey={process.env.NEXT_PUBLIC_RECAPTCHA}
-                  onChange={() => setIsSafe(true)}
-                  onExpired={() => setIsSafe(false)}
-                />
-
+                <GoogleReCaptchaProvider reCaptchaKey={process.env.NEXT_PUBLIC_RECAPTCHA}>
+                  <GoogleReCaptcha onVerify={() => setIsSafe(true)} />
+                </GoogleReCaptchaProvider>
                 <Form.Button style={{ marginTop: '1em' }} type="submit">
                   Send
                 </Form.Button>
